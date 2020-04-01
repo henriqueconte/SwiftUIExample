@@ -96,6 +96,7 @@ iOSInjectionProject/
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
+*.xcuserdata
 /*.gcno
 
 ### Xcode Patch ###
