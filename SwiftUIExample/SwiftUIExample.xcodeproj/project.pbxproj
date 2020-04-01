@@ -13,6 +13,7 @@
 		8049D85124351E4600556944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8049D85024351E4600556944 /* Assets.xcassets */; };
 		8049D85424351E4600556944 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8049D85324351E4600556944 /* Preview Assets.xcassets */; };
 		8049D85724351E4600556944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8049D85524351E4600556944 /* LaunchScreen.storyboard */; };
+		80E3507C24352C2C001ACFA1 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3507B24352C2C001ACFA1 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8049D85324351E4600556944 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8049D85624351E4600556944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8049D85824351E4600556944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80E3507B24352C2C001ACFA1 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		8049D84924351E4300556944 /* SwiftUIExample */ = {
 			isa = PBXGroup;
 			children = (
+				80E3507A24352C0F001ACFA1 /* Model */,
 				8049D84A24351E4300556944 /* AppDelegate.swift */,
 				8049D84C24351E4300556944 /* SceneDelegate.swift */,
 				8049D84E24351E4300556944 /* ContentView.swift */,
@@ -73,6 +76,14 @@
 				8049D85324351E4600556944 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		80E3507A24352C0F001ACFA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80E3507B24352C2C001ACFA1 /* MovieCell.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			files = (
 				8049D84B24351E4300556944 /* AppDelegate.swift in Sources */,
 				8049D84D24351E4300556944 /* SceneDelegate.swift in Sources */,
+				80E3507C24352C2C001ACFA1 /* MovieCell.swift in Sources */,
 				8049D84F24351E4300556944 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

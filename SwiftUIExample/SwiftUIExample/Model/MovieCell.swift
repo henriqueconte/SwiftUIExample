@@ -1,23 +1,25 @@
 //
-//  ContentView.swift
+//  MovieCell.swift
 //  SwiftUIExample
 //
 //  Created by Henrique Figueiredo Conte on 01/04/20.
 //  Copyright © 2020 Henrique Figueiredo Conte. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 
-struct ContentView: View {
+
+struct MovieCell: View {
+    
     var body: some View {
-        List(0..<5) { item in
-            MovieCell()
-        }
+        Text("ola mundo")
     }
+    
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MovieCell_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MovieCell()
     }
 }
