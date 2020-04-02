@@ -9,9 +9,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var moviesList: [Movie] = [Movie(title: "The Platform",
+                                     overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl", averageRating: 3.5, posterPath: "dsaff", posterImage: nil),
+     Movie(title: "The Platform",
+     overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
+     averageRating: 3.5,
+     posterPath: "dsaff",
+     posterImage: nil),
+     
+    Movie(title: "The Platform",
+    overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
+    averageRating: 3.5,
+    posterPath: "dsaff",
+    posterImage: nil),
+    
+    Movie(title: "The Platform",
+    overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
+    averageRating: 3.5,
+    posterPath: "dsaff",
+    posterImage: nil),
+    
+    Movie(title: "The Platform",
+    overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
+    averageRating: 3.5,
+    posterPath: "dsaff",
+    posterImage: nil)]
+    
+    init() {
+        UITableView.appearance().separatorStyle = .none
+    }
+    
+    
     var body: some View {
-        List(0..<5) { item in
-            MovieCell()
+        moviesTableView
+    }
+    
+    var moviesTableView: some View {
+        List (0..<moviesList.count) { movie in
+            MovieCell(movie: self.moviesList[movie])
+            .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
         }
     }
 }
