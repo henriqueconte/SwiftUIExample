@@ -56,7 +56,6 @@ struct ContentView: View {
         List (0..<moviesList.count) { count in
             
             if count == 0 {
-//                MovieCell(movie: Movie(title: "novo filme", overview: "sem", averageRating: 0.0, posterPath: "", posterImage: nil))
                 self.moviesCollectionView
             }
             else {
@@ -69,14 +68,18 @@ struct ContentView: View {
     
     var moviesCollectionView: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
-               HStack {
+            
+            HStack {
                 
-                ForEach(self.moviesList) { currentMovie in
-                    MovieCell(movie: currentMovie)
-                        .aspectRatio(contentMode: .fill)
-                }
+                 ForEach(self.moviesList) { currentMovie in
+                    
+                     MovieCell(movie: currentMovie)
+                        .frame(width: 300, height: 200, alignment: .center)
+                    
+                 }
                 
-            }
+             }
+
         })
     }
     

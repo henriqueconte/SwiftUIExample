@@ -24,10 +24,6 @@ struct ClientManager {
             }
             do {
                 let returnAPI = try JSONDecoder().decode(PageResults.self, from: dataResponse)
-               
-                print("")
-                //self.preparePopularMovieInformation(apiReturn: returnAPI)
-               // completion(self.popularMovieList, nil)
                 
             } catch {
             print(error)

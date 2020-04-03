@@ -15,25 +15,27 @@ struct MovieCell: View {
     let movie: Movie
     
     var body: some View {
-        
         HStack() {
             
             Image("avengersPost")
                 .cornerRadius(10)
             
-            VStack(alignment: .leading) {
-                Text(movie.title).bold()
-                    .lineLimit(1)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
+          //  GeometryReader { fullView in
                 
-                Text(movie.overview)
-                    .lineLimit(3)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 20))
-                    .foregroundColor(.gray)
-                    .frame(width: 100, height: 60, alignment: .leading)
-                
-                ratingView
-            }
+                VStack(alignment: .leading) {
+                    Text(self.movie.title).bold()
+                        .lineLimit(1)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
+                    
+                    Text(self.movie.overview)
+                        .lineLimit(3)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 20))
+                        .foregroundColor(.gray)
+                       // .frame(width: fullView.size.width, height: fullView.size.height / 2, alignment: .leading)
+                    
+                    self.ratingView
+                }
+         //   }
         }
     }
     
