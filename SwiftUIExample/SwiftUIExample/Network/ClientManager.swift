@@ -23,8 +23,9 @@ struct ClientManager {
                 return
             }
             do {
-                let returnAPI = try JSONDecoder().decode(Movie.self, from: dataResponse)
+                let returnAPI = try JSONDecoder().decode(PageResults.self, from: dataResponse)
                
+                print("")
                 //self.preparePopularMovieInformation(apiReturn: returnAPI)
                // completion(self.popularMovieList, nil)
                 
@@ -34,6 +35,10 @@ struct ClientManager {
         })
         
         dataTask.resume()
+    }
+    
+    func preparePopularMoviesInformations() {
+        
     }
     
 }

@@ -36,8 +36,15 @@ struct ContentView: View {
     posterPath: "dsaff",
     posterImage: nil)]
     
+    var network = ClientManager()
+    
+    
     init() {
         UITableView.appearance().separatorStyle = .none
+    
+        network.getPopularMoviesRequest { (moviesArray) in
+            
+        }
     }
     
     
@@ -46,11 +53,33 @@ struct ContentView: View {
     }
     
     var moviesTableView: some View {
-        List (0..<moviesList.count) { movie in
-            MovieCell(movie: self.moviesList[movie])
-            .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+        List (0..<moviesList.count) { count in
+            
+            if count == 0 {
+//                MovieCell(movie: Movie(title: "novo filme", overview: "sem", averageRating: 0.0, posterPath: "", posterImage: nil))
+                self.moviesCollectionView
+            }
+            else {
+                MovieCell(movie: self.moviesList[count])
+                .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+            }
+
         }
     }
+    
+    var moviesCollectionView: some View {
+        ScrollView(.horizontal, showsIndicators: false, content: {
+               HStack {
+                
+                ForEach(self.moviesList) { currentMovie in
+                    MovieCell(movie: currentMovie)
+                        .aspectRatio(contentMode: .fill)
+                }
+                
+            }
+        })
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

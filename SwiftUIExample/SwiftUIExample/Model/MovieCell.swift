@@ -30,6 +30,7 @@ struct MovieCell: View {
                     .lineLimit(3)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 20))
                     .foregroundColor(.gray)
+                    .frame(width: 100, height: 60, alignment: .leading)
                 
                 ratingView
             }

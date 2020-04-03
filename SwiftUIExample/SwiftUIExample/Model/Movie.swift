@@ -9,8 +9,9 @@
 import Foundation
 
 
-struct Movie: Identifiable, Decodable {
+struct Movie: Identifiable, Decodable, Encodable, Hashable {
     var id: String = UUID().uuidString
+    //var id: Int?
     let title: String
     let overview: String
     let averageRating: Double
