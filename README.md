@@ -6,7 +6,8 @@ Features:
 
 * Whole layout made in SwiftUI.
 * API request integration with SwfitUI.
-* MVVM architecture .
+* MVVM architecture.
+* White and Dark mode.
 
 Created by Henrique Conte (@henriqueconte).
 
