@@ -47,6 +47,6 @@ struct MovieCell: View {
 
 struct MovieCell_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCell(movie: Movie(title: "Avengers", overview: "blalblablablalbaalblabllabblalblalblbalbalblbalblbalblbalblbalablblab", voteAverage: 8.0, posterPath: "https://"))
+        MovieCell(movie: Movie(title: "Avengers", overview: "The grave course of events set in motion by Thanos that wiped out half the universe and fractured the Avengers ranks compels the remaining Avengers to take one final stand in Marvel Studios' grand conclusion to twenty-two films, Avengers: Endgame.", voteAverage: 8.0, posterPath: "https://"))
     }
 }

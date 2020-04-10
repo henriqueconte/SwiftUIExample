@@ -12,31 +12,35 @@ struct ContentView: View {
     
     @State var moviesModel : MovieListViewModel = MovieListViewModel()
     
+    var isHeaderActive: Bool = false
+    
     init() {
         UITableView.appearance().separatorStyle = .none
     }
     
-    
     var body: some View {
-        moviesTableView
-    }
-    
-    var moviesTableView: some View {
-        List(0..<moviesModel.popularMovies.count + 1) { count in
-            
-            if count == 0 {
-                self.moviesCollectionView
+        List {
+            Section(header: Text("Playing Now")) {
+                moviesCollectionView
             }
-            else {
-                MovieCell(movie: self.moviesModel.popularMovies[count - 1])
-                .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+            
+            Section(header: Text("Popular Movies")) {
+                moviesTableView
             }
         }
     }
     
+    var moviesTableView: some View {
+
+        ForEach(0..<self.moviesModel.popularMovies.count) { count in
+            MovieCell(movie: self.moviesModel.popularMovies[count])
+            .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+        }
+    }
+    
     var moviesCollectionView: some View {
+        
         ScrollView(.horizontal, showsIndicators: false, content: {
-            
             HStack {
                 ForEach(0..<self.moviesModel.playingNowMovies.count) { count in
 
@@ -46,6 +50,7 @@ struct ContentView: View {
              }
         })
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
