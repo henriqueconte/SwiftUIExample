@@ -20,41 +20,22 @@ struct ContentView: View {
     
     var body: some View {
         
-        List() {
-            Section(header: HStack {
-                Text("Playing Now")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.black)
-                    .padding()
-                
-                Spacer()
-            }
-                .background(Color.white)
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            ,content: {
-                 moviesCollectionView
-            })
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        List {
             
-            Section(header: HStack {
-                Text("Popular Movies")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.black)
-                    .padding()
-                
-                Spacer()
-            }
-                .background(Color.white)
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            ,content: {
-                 moviesTableView
-            })
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            Text("Playing Now")
+                .bold()
+                .font(.title)
             
+            moviesCollectionView
+            
+            Text("Popular Movies")
+                .bold()
+                .font(.title)
+            
+            moviesTableView
+
         }
-            .listStyle(GroupedListStyle())
+        
     }
     
     
