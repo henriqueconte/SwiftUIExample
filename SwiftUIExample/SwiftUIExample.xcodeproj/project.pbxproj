@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		802EA7EE2440E07200C67872 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802EA7ED2440E07200C67872 /* MovieListViewModel.swift */; };
+		802EA7F02440F91D00C67872 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802EA7EF2440F91D00C67872 /* ImageDownloader.swift */; };
 		8049D84B24351E4300556944 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049D84A24351E4300556944 /* AppDelegate.swift */; };
 		8049D84D24351E4300556944 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049D84C24351E4300556944 /* SceneDelegate.swift */; };
 		8049D84F24351E4300556944 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049D84E24351E4300556944 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		802EA7ED2440E07200C67872 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		802EA7EF2440F91D00C67872 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		8049D84724351E4300556944 /* SwiftUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8049D84A24351E4300556944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8049D84C24351E4300556944 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				807E791B24367FEF00DE3F40 /* ClientManager.swift */,
+				802EA7EF2440F91D00C67872 /* ImageDownloader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				8049D84B24351E4300556944 /* AppDelegate.swift in Sources */,
 				8049D84D24351E4300556944 /* SceneDelegate.swift in Sources */,
 				804A90A12437A16300C8ED9A /* PageResults.swift in Sources */,
+				802EA7F02440F91D00C67872 /* ImageDownloader.swift in Sources */,
 				802EA7EE2440E07200C67872 /* MovieListViewModel.swift in Sources */,
 				807E791C24367FEF00DE3F40 /* ClientManager.swift in Sources */,
 				80E3507C24352C2C001ACFA1 /* MovieCell.swift in Sources */,

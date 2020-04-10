@@ -17,25 +17,21 @@ struct MovieCell: View {
     var body: some View {
         HStack() {
             
-            Image("avengersPost")
+            Image(uiImage: movie.posterPath?.getImageFromMoviePath() ?? UIImage())
                 .cornerRadius(10)
             
-          //  GeometryReader { fullView in
+            VStack(alignment: .leading) {
+                Text(self.movie.title ?? "").bold()
+                    .lineLimit(1)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
                 
-                VStack(alignment: .leading) {
-                    Text(self.movie.title ?? "").bold()
-                        .lineLimit(1)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
-                    
-                    Text(self.movie.overview ?? "")
-                        .lineLimit(3)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 20))
-                        .foregroundColor(.gray)
-                       // .frame(width: fullView.size.width, height: fullView.size.height / 2, alignment: .leading)
-                    
-                    self.ratingView
-                }
-         //   }
+                Text(self.movie.overview ?? "")
+                    .lineLimit(3)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 20))
+                    .foregroundColor(.gray)
+                
+                self.ratingView
+            }
         }
     }
     
@@ -43,7 +39,7 @@ struct MovieCell: View {
         HStack {
             Image("starIcon")
             
-            Text("\(movie.voteAverage ?? 0.0)")
+            Text(String(format: "%.1f", movie.voteAverage ?? 0.0))
                 .foregroundColor(.gray)
         }
     }
