@@ -10,41 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var moviesList: [Movie] = [Movie(title: "The Platform",
-                                     overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl", averageRating: 3.5, posterPath: "dsaff", posterImage: nil),
-     Movie(title: "The Platform",
-     overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
-     averageRating: 3.5,
-     posterPath: "dsaff",
-     posterImage: nil),
-     
-    Movie(title: "The Platform",
-    overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
-    averageRating: 3.5,
-    posterPath: "dsaff",
-    posterImage: nil),
-    
-    Movie(title: "The Platform",
-    overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
-    averageRating: 3.5,
-    posterPath: "dsaff",
-    posterImage: nil),
-    
-    Movie(title: "The Platform",
-    overview: "llfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflflllfsdlfkfklsdkflskdflfl",
-    averageRating: 3.5,
-    posterPath: "dsaff",
-    posterImage: nil)]
-    
-    var network = ClientManager()
-    
+    @State var moviesModel : MovieListViewModel = MovieListViewModel()
     
     init() {
         UITableView.appearance().separatorStyle = .none
-    
-        network.getPopularMoviesRequest { (moviesArray) in
-            
-        }
     }
     
     
@@ -53,16 +22,15 @@ struct ContentView: View {
     }
     
     var moviesTableView: some View {
-        List (0..<moviesList.count) { count in
+        List(0..<moviesModel.popularMovies.count + 1) { count in
             
             if count == 0 {
                 self.moviesCollectionView
             }
             else {
-                MovieCell(movie: self.moviesList[count])
+                MovieCell(movie: self.moviesModel.popularMovies[count - 1])
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
             }
-
         }
     }
     
@@ -70,19 +38,14 @@ struct ContentView: View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             
             HStack {
-                
-                 ForEach(self.moviesList) { currentMovie in
-                    
-                     MovieCell(movie: currentMovie)
-                        .frame(width: 300, height: 200, alignment: .center)
-                    
-                 }
-                
-             }
+                ForEach(0..<self.moviesModel.playingNowMovies.count) { count in
 
+                    MovieCell(movie: self.moviesModel.playingNowMovies[count])
+                        .frame(width: 300, height: 200, alignment: .center)
+                 }
+             }
         })
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

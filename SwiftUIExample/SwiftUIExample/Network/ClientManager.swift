@@ -9,10 +9,11 @@
 import Foundation
 
 
-struct ClientManager {
+final class ClientManager {
     
-    func getPopularMoviesRequest(completion: @escaping ([Movie]) -> Void){
-        var request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/movie/popular?page=1&language=en-US&api_key=77d63fcdb563d7f208a22cca549b5f3e")!)
+    func getMoviesRequest(urlPath: String, completion: @escaping ([Movie]) -> Void){
+        
+        var request = URLRequest(url: URL(string: urlPath)!)
         
         request.httpMethod = "GET"
         
@@ -25,16 +26,16 @@ struct ClientManager {
             do {
                 let returnAPI = try JSONDecoder().decode(PageResults.self, from: dataResponse)
                 
+                let moviesList = returnAPI.results
+                
+                completion(moviesList ?? [])
+                
             } catch {
             print(error)
             }
         })
         
         dataTask.resume()
-    }
-    
-    func preparePopularMoviesInformations() {
-        
     }
     
 }

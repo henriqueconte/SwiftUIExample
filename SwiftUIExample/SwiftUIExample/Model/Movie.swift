@@ -9,19 +9,50 @@
 import Foundation
 
 
-struct Movie: Identifiable, Decodable, Encodable, Hashable {
-    var id: String = UUID().uuidString
-    let title: String
-    let overview: String
-    let averageRating: Double
-    let posterPath: String
-    let posterImage: Data?
+enum OriginalLanguage: String, Codable {
+    case en = "en"
+    case es = "es"
+}
+
+// MARK: - Result
+struct Movie: Codable, Identifiable {
+    let popularity: Double? = 0
+    let voteCount: Int? = 0
+    let video: Bool? = false
+    let posterPath: String?
+    let id: Int? = 0
+    let adult: Bool? = false
+    let backdropPath: String? = ""
+    let originalLanguage: OriginalLanguage? = .en
+    let originalTitle: String? = ""
+    let genreIDS: [Int]? = []
+    var title: String? = ""
+    var voteAverage: Double? = 0
+    var overview : String? = ""
+    let releaseDate: String? = ""
+
+    enum CodingKeys: String, CodingKey {
+        case popularity
+        case voteCount = "vote_count"
+        case video
+        case posterPath = "poster_path"
+        case id, adult
+        case backdropPath = "backdrop_path"
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case genreIDS = "genre_ids"
+        case title
+        case voteAverage = "vote_average"
+        case overview
+        case releaseDate = "release_date"
+    }
     
-    init(title: String, overview: String, averageRating: Double, posterPath: String, posterImage: Data?) {
+    init(title: String, overview: String, voteAverage: Double, posterPath: String) {
         self.title = title
         self.overview = overview
-        self.averageRating = averageRating
+        self.voteAverage = voteAverage
         self.posterPath = posterPath
-        self.posterImage = posterImage
     }
 }
+
+

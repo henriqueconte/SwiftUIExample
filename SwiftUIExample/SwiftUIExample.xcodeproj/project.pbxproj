@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802EA7EE2440E07200C67872 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802EA7ED2440E07200C67872 /* MovieListViewModel.swift */; };
 		8049D84B24351E4300556944 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049D84A24351E4300556944 /* AppDelegate.swift */; };
 		8049D84D24351E4300556944 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049D84C24351E4300556944 /* SceneDelegate.swift */; };
 		8049D84F24351E4300556944 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049D84E24351E4300556944 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802EA7ED2440E07200C67872 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		8049D84724351E4300556944 /* SwiftUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8049D84A24351E4300556944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8049D84C24351E4300556944 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		802EA7EC2440E05900C67872 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				802EA7ED2440E07200C67872 /* MovieListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8049D83E24351E4300556944 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		8049D84924351E4300556944 /* SwiftUIExample */ = {
 			isa = PBXGroup;
 			children = (
+				802EA7EC2440E05900C67872 /* ViewModel */,
 				807E791A24367FD700DE3F40 /* Network */,
 				80E3507A24352C0F001ACFA1 /* Model */,
 				8049D84A24351E4300556944 /* AppDelegate.swift */,
@@ -177,6 +188,7 @@
 				8049D84B24351E4300556944 /* AppDelegate.swift in Sources */,
 				8049D84D24351E4300556944 /* SceneDelegate.swift in Sources */,
 				804A90A12437A16300C8ED9A /* PageResults.swift in Sources */,
+				802EA7EE2440E07200C67872 /* MovieListViewModel.swift in Sources */,
 				807E791C24367FEF00DE3F40 /* ClientManager.swift in Sources */,
 				80E3507C24352C2C001ACFA1 /* MovieCell.swift in Sources */,
 				8049D84F24351E4300556944 /* ContentView.swift in Sources */,

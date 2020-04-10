@@ -10,14 +10,14 @@ import Foundation
 
 
 struct PageResults: Codable {
-    let page: Int
-    let results: [Movie]
-    let totalResults, totalPages: Int
-    
+    let page, totalResults, totalPages: Int?
+    let results: [Movie]?
+
     enum CodingKeys: String, CodingKey {
-        case page, results
+        case page
         case totalResults = "total_results"
         case totalPages = "total_pages"
+        case results
     }
 }
 

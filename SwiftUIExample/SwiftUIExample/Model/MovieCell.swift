@@ -23,11 +23,11 @@ struct MovieCell: View {
           //  GeometryReader { fullView in
                 
                 VStack(alignment: .leading) {
-                    Text(self.movie.title).bold()
+                    Text(self.movie.title ?? "").bold()
                         .lineLimit(1)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
                     
-                    Text(self.movie.overview)
+                    Text(self.movie.overview ?? "")
                         .lineLimit(3)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 20))
                         .foregroundColor(.gray)
@@ -43,7 +43,7 @@ struct MovieCell: View {
         HStack {
             Image("starIcon")
             
-            Text("\(movie.averageRating)")
+            Text("\(movie.voteAverage ?? 0.0)")
                 .foregroundColor(.gray)
         }
     }
@@ -51,6 +51,6 @@ struct MovieCell: View {
 
 struct MovieCell_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCell(movie: Movie(title: "Avengers", overview: "blalblablablalbaalblabllabblalblalblbalbalblbalblbalblbalblbalablblab", averageRating: 8.0, posterPath: "https://", posterImage: nil))
+        MovieCell(movie: Movie(title: "Avengers", overview: "blalblablablalbaalblabllabblalblalblbalbalblbalblbalblbalblbalablblab", voteAverage: 8.0, posterPath: "https://"))
     }
 }
